@@ -42,11 +42,16 @@ export const LoginedSidebarData = [
      icon: <BsIcons.BsFilePost />,
      cName: 'nav-text'
    },
-	
    {
      title: 'Keşfet',
      path: '/discover',
      icon: <ImIcons.ImRocket />,
+     cName: 'nav-text'
+   },
+   {
+     title: 'Arama',
+     path: '/search',
+     icon: <AiIcons.AiOutlineSearch />,
      cName: 'nav-text'
    },
 	{

@@ -9,9 +9,6 @@ export default function Reset(){
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
 	const {token} = useParams();
-	//alert(token);
-	
-	//{email: "yahyatrkulker35@gmail.com"}
 	
 	function signinFunc(){
 		M.toast({html: "Giriş Yapılıyor... Lütfen Bekleyiniz!", classes: "yellow"})
@@ -38,7 +35,7 @@ export default function Reset(){
 				M.toast({html: data.message, classes: "green"})
 				
 				setTimeout(function(){
-					window.location='/signin';
+					window.location='/signout';
 				}, 2000)
 				
 			}

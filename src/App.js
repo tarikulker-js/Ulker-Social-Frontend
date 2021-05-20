@@ -13,7 +13,9 @@ import Copyright from './components/Copyright';
 //Pages Import
 import Home from './components/pages/Home';
 import Profile from './components/pages/Profile';
+import EditProfile from './components/pages/EditProfile.js';
 import UserProfile from './components/pages/UserProfile';
+import SearchUser from './components/pages/SearchUser';
 import Signin from './components/pages/Signin';
 import Signup from './components/pages/Signup';
 import Signout from './components/pages/Signout';
@@ -40,20 +42,18 @@ const Routing = () => {
 		.then((data) => {
 			console.log("TOKEN Verify", data);
 			
-			/*
 			if(data.error === null && data.auth === true){
-				window.location="/";
+				//window.location="/";
 				dispatch({type: "USER", payload: data.user})
 				
 			}else if(data.error && data.auth === false){
-				window.location="/signin";
+				//window.location="/signin";
 				
 				localStorage.setItem("jwt", null);
 				localStorage.setItem("user", null);
 				localStorage.setItem("userId", null);
 				
 			}
-			*/
 		})
 		.catch((err) => {
 			console.log("VERIFY TOKEN ERROR!!" + err)
@@ -75,8 +75,11 @@ const Routing = () => {
 				<Route path='/signout'>
 					<Signout />
 				</Route>
-				<Route path='/profile'>
+				<Route exact path='/profile'>
 					<Profile />
+				</Route>
+				<Route path='/profile/edit'>
+					<EditProfile />
 				</Route>
 				<Route path='/createpost'>
 					<CreatePost />
@@ -92,6 +95,9 @@ const Routing = () => {
 				</Route>
 				<Route path="/reset/:token">
 					<NewPassword />
+				</Route>
+				<Route path="/search">
+					<SearchUser />
 				</Route>
 			
 			</Switch>

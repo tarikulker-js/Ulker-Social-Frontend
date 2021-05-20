@@ -84,8 +84,6 @@ export default function Discover(){
 	}
 	
 	const makeComment = (text,postId)=>{
-		console.log('yorum gรถnder');
-   	
 		fetch(`${API_URL}/comment`,{
 			method:"put",
 			headers:{
@@ -156,12 +154,12 @@ export default function Discover(){
 								<div className='card home-card'>
 								{
 									
-								<img 
-									src={item.postedBy.pic} 
-									className='profileImg'
-									
-									style={{width: '35px', height: '35px', borderRadius: '50%', float: 'left'}}
-								/>
+								<span>	<img 
+										src={item.postedBy.pic} 
+										className='profileImg'
+
+										style={{width: '35px', height: '35px', borderRadius: '50%', float: 'left', margin: "15px"}}
+									/></span>
 									
 								}
 						{

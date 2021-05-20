@@ -159,7 +159,7 @@ export default function Home(){
 					data.length !== null  ?
 						
 						data.map(item => {
-							console.log("postedBy profile", item.postedBy.pic)
+							console.log("postedBy profile", item)
 						
 							return(
 								<div className='card home-card'>
@@ -167,12 +167,10 @@ export default function Home(){
 								<img 
 									src={item.postedBy.pic} 
 									className='profileImg'
-									
-									style={{width: '35px', height: '35px', borderRadius: '50%', float: 'left'}}
+									style={{width: '35px', height: '35px', borderRadius: '50%', float: 'left', margin: "15px"}}
 								/>
 								
 						{
-										console.log("ID",item.postedBy._id),
 										item.postedBy._id !== null ? 
 											<h5 className='username'><Link to={ "/user/"+item.postedBy._id }>{item.postedBy.name}</Link></h5>
 										:

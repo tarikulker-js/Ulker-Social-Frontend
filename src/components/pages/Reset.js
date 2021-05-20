@@ -10,7 +10,7 @@ export default function Reset(){
 	const [email, setEmail] = useState("");
 	
 	
-	function signinFunc(){
+	function resetPassword(){
 		M.toast({html: "Giriş Yapılıyor... Lütfen Bekleyiniz!", classes: "yellow"})
 		
 		fetch(`${API_URL}/reset-password`, {
@@ -24,8 +24,6 @@ export default function Reset(){
 		})
 		.then(res => res.json())
 		.then(data => {
-			//axios.post("${API_URL}/", data)
-			
 			console.log(data)
 			
 			if(data.error){
@@ -62,7 +60,7 @@ export default function Reset(){
 								className="btn waves-effect waves-dark"
 								type="submit"
 								name="action"
-								onClick={ (e) => signinFunc(e) }
+								onClick={ (e) => resetPassword(e) }
 							>
 									Şifreyi Yenile
 							</button>
