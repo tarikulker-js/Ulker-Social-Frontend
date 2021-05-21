@@ -4,7 +4,6 @@ import axios from 'axios';
 import M from 'materialize-css';
 import {UserContext} from '../../App';
 import { API_URL, UPLOAD_IMG_URL } from '../../config';
-import Share from './userShare';
 
 export default function Profile(){
 	const myId = localStorage.getItem("userId");
@@ -147,9 +146,7 @@ export default function Profile(){
 
 									</div>
 						 }</h5>
-					
-					<Share style={{float: "left"}}/>
-					
+
 					<h6 style={{fontSize: "2vh", margin: "2vh"}}>{user.email ? user.email : 
 						 <div className='loading'>
 
