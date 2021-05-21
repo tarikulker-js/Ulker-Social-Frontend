@@ -13,6 +13,7 @@ function Route(){
 							padding: "5px"
 						}} class="brand-logo navbar-logo"><Link to="/" class="brand-logo navbar-logo" >Ulker Social</Link></h4>
 					<li class='navbar-li'><Link to="/discover" class='navbar-li'><h6 class='navbar-h6'>Keşfet</h6></Link></li>
+					<li class='navbar-li'><Link to="/search" class='navbar-li'><h6 class='navbar-h6'>Ara</h6></Link></li>
 					<li class='navbar-li'><Link to="/profile" class='navbar-li'><h6 class='navbar-h6'>Profile</h6></Link></li>
 					<li class='navbar-li'><Link to="/createpost" class='navbar-li'><h6 class='navbar-h6'>Create Post</h6></Link></li>
 					<li class='navbar-li red'><Link to="/signout" class='navbar-li'><h6 class='navbar-h6 signout-h6'>Signout</h6></Link></li>
