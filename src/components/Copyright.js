@@ -5,7 +5,7 @@ export default function Copyright(){
 	return(
 	<div>
 		<MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> Tarik Ulker </a>
+          &copy; {new Date().getFullYear()} Copyright: <a > Tarik Ulker </a>
         </MDBContainer>
 	</div>
 	)
