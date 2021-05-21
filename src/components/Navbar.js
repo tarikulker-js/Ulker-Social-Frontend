@@ -24,7 +24,7 @@ function Route(){
 		return(
 			<div>
 				<ul id="nav-mobile" class="right hide-on-med-and-down navbar-ul">
-					<h4 class="brand-logo navbar-logo"><Link to="/signin" class="brand-logo navbar-logo" >TUT Social</Link></h4>
+					<h4 class="brand-logo navbar-logo"><Link to="/signin" class="brand-logo navbar-logo" >Ulker Social</Link></h4>
 					<li class='navbar-li'><Link to="/signin" class='navbar-li'><h6 class='navbar-h6'>Signin</h6></Link></li>
 					<li class='navbar-li'><Link to="/signup" class='navbar-li'><h6 class='navbar-h6'>Signup</h6></Link></li>
 				 </ul>
