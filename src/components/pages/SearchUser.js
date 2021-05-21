@@ -40,7 +40,7 @@ export default function Reset(){
 							
 							<input 
 								type='search'
-								placeholder='Yeni Şifreniz'
+								placeholder='Kullanıcı Adı'
 								value={ username }
 								onChange={(e) => setUsername(e.target.value)}
 							/>
