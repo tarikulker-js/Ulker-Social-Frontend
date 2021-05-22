@@ -27,22 +27,18 @@ export default function Signin(){
 		})
 		.then(res => res.json())
 		.then(data => {
-			//axios.post("${API_URL}/", data)
-			
-			console.log(data)
-			
 			if(data.error){
 				M.toast({html: data.error, classes: "red"})
 			}else{
-				console.log("DATA", data)
+				//console.log("DATA", data)
 				localStorage.setItem("jwt", data.token);
 				localStorage.setItem("user", JSON.stringify(data));
 				localStorage.setItem("userId", data.user)
 				localStorage.setItem("following", data.following);
 				localStorage.setItem("followers", data.followers);
 				
-				console.log("DATA", data.user)
-				console.log("LOCALSTORAGE ID", localStorage.getItem("userId"))
+				//console.log("DATA", data.user)
+				//console.log("LOCALSTORAGE ID", localStorage.getItem("userId"))
 				
 				
 				dispatch({type: "USER", payload: data.user})
@@ -88,7 +84,7 @@ export default function Signin(){
 								name="action"
 								onClick={ (e) => signinFunc(e) }
 							>
-									Login
+									Giriş Yap
 							</button>
 
 							<h5>Halen bir hesabınız yok mu? <Link to='/signup'>Kayıt olun!</Link></h5>
