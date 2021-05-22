@@ -90,7 +90,6 @@ export default function EditProfile(){
 	
 	const updatePhoto = (file) => {
 		setImage(file);
-		alert("file", file);
 	}
 	
 	const updateName = (newNameFunc) =>{
