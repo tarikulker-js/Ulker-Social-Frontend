@@ -136,7 +136,9 @@ export default function Home(){
 			console.log(result);
 			
 			if(result.message){
-				M.toast({html: result.message, classes: "green"})
+				M.toast({html: result.message, classes: "green"});
+				
+				window.location="/logout";
 			}
 			
 			const newData = data.filter(item => {

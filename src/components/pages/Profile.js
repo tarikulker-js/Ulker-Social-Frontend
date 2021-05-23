@@ -128,6 +128,7 @@ export default function Profile(){
 					}
 				</div>
 				<div>
+					
 					<h5 style={{fontSize: "3vh", margin: "0.4vh"}}>{user.name ? user.name : 
 						 <div className='loading'>
 
@@ -165,6 +166,32 @@ export default function Profile(){
 
 									</div>
 						 }</h6>
+					
+					<br/>
+					
+					<p style={{margin: "2vh"}}>{user.bio ? user.bio : 
+						 <div className='loading'>
+
+										<center>
+											<img 
+												src="https://res.cloudinary.com/doaf7ybhd/image/upload/v1619649099/6EE61733-6F43-40B6-B49E-63A9C737E251_a1b5fz.gif"
+
+												height="100px"
+												width="150px"
+											/>
+
+											<h5 style={{fontSize: "2vh"}}>Yükleniyor...</h5>
+
+
+										</center>
+
+									</div>
+						 }</p>
+					
+					<h5 style={{margin: "2vh", fontSize: "2vh"}}><a href={user.site}>{user.site}</a></h5>
+					
+					<br/>
+					
 					<div style={{
 							display: 'flex', 
 							justifyContent: 'space-between', 
@@ -210,6 +237,7 @@ export default function Profile(){
 							<a href="/profile/edit"><button 
 								className="btn input waves-effect waves-dark"
 							>Profilinizi Güncelleyin</button></a>
+							
 						</div>
 						
 				</div>

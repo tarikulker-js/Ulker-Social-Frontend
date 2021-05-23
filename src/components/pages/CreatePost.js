@@ -119,7 +119,7 @@ export default function CreatePost(){
 
 				<input 
 					type='text'
-					placeholder='Açıklama'
+					placeholder='Açıklama (Zorunludur)'
 					value={ body }
 					onChange={(e) => setBody(e.target.value)}
 				/>

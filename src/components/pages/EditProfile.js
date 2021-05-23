@@ -3,6 +3,7 @@ import { FaUserAstronaut } from "react-icons/fa";
 import axios from 'axios';
 import M from 'materialize-css';
 import {UserContext} from '../../App';
+import '../../App.css';
 import { API_URL, UPLOAD_IMG_URL } from '../../config';
 import Share from './userShare';
 
@@ -22,6 +23,8 @@ export default function EditProfile(){
 	const [image,setImage] = useState("");
 	const [name,setName] = useState("");
 	const [email, setEmail] = useState("");
+	const [bio, setBio] = useState("");
+	const [site, setSite] = useState("https://");
 	const [url, setUrl] = useState("");
 	
 	useEffect(() => {
@@ -90,6 +93,7 @@ export default function EditProfile(){
 	
 	const updatePhoto = (file) => {
 		setImage(file);
+		alert("file", file);
 	}
 	
 	const updateName = (newNameFunc) =>{
@@ -189,6 +193,101 @@ export default function EditProfile(){
 		
 	}
 	
+	const deleteUser = () => {
+		//${API_URL}
+		
+		M.toast({html: "Hesabınız Siliniyor...", classes: "yellow"});
+		
+		console.log(`${API_URL}/deleteuser/${userProfile._id}`)
+		
+		fetch(`${API_URL}/deleteuser/${userProfile._id}`, {
+			method: "DELETE",
+			headers: {
+				Authorization: "Bearer " + localStorage.getItem("jwt")
+			}
+		}).then(res => res.json())
+		.then(result => {
+			console.log(result);
+			
+			if(result.message){
+				M.toast({html: result.message, classes: "green"});
+			}
+			
+		})
+		.catch(err => {
+			M.toast({html: err, classes: "red darken-3"});
+			
+			console.log(err)
+		})
+		
+	}
+	
+	const updateBio = () => {
+		
+		const postData = {
+			bio,
+			userId: userProfile._id
+		}
+		
+		axios.post(`${API_URL}/updatebio`, {
+			postData
+		}).then(res => {
+			console.log(res);
+			
+			M.toast({html: res.data.message, classes: "green"});
+			
+			setTimeout(function(){
+				window.location='/profile'
+			}, 2000)
+			
+		}).catch(err => {
+			console.log(err);
+			
+			M.toast({html: err, classes: "red"});
+			
+		})
+		.catch(err=>{
+			M.toast({html: err, classes: "red darken-3"})
+		})
+	}
+	
+	const updateSite = () =>{
+		
+		const postData = {
+			site,
+			userId: userProfile._id
+		}
+		
+		console.log(site.substring(0,4))
+		
+		if(site.substring(0,4) !== "http"){
+			console.log(site.substring(0,5))
+			M.toast({html: "Geçersiz URL",classes:"#c62828 red darken-3"})
+            return
+		}
+		
+		axios.post(`${API_URL}/updatesite`, {
+			postData
+		}).then(res => {
+			console.log(res);
+			
+			M.toast({html: res.data.message, classes: "green"});
+			
+			setTimeout(function(){
+				window.location='/profile'
+			}, 2000)
+			
+		}).catch(err => {
+			console.log(err);
+			
+			M.toast({html: err, classes: "red"});
+			
+		})
+		.catch(err=>{
+			M.toast({html: err, classes: "red darken-3"})
+		})
+	}
+	
 	return(
 		<div style={{ maxWidth: '850px', margin: '0px auto'}}>
 			<center>
@@ -270,6 +369,56 @@ export default function EditProfile(){
 							</button>
 						</div>
 						
+						<br />
+						
+						<hr/>
+						
+						Biyografinizi Güncelleyin:
+						<div className="changeBio">
+							<textarea 
+								type='email'
+								placeholder='Biyografiniz'
+								value={ bio }
+								onChange={(e) => setBio(e.target.value)}
+							>
+								
+							</textarea>
+							
+							<button 
+								className="btn waves-effect waves-dark"
+								type="submit"
+								name="action"
+								onClick={ (e) => updateBio(e) }
+							>
+								BIO'u Güncelleyin
+							</button>
+							
+						</div>
+						
+						<br/>
+						
+						<hr/>
+						
+						<div className="changeBio">
+							Web Site Ekleyin: 
+							<input
+								type='email'
+								placeholder='Biyografiniz'
+								value={ site }
+								onChange={(e) => setSite(e.target.value)}
+							/>
+							
+							<button 
+								className="btn waves-effect waves-dark"
+								type="submit"
+								name="action"
+								onClick={ (e) => updateSite(e) }
+							>
+								Web Site EKleyin
+							</button>
+							
+						</div>
+						
 						<br/>
 						
 						<hr/>
@@ -285,6 +434,24 @@ export default function EditProfile(){
 							>
 									Şifrenizi Güncelleyin
 							</button>
+						</div>
+						
+						<br/><br/>
+						
+						<div className="deleteUser">
+							<button 
+								className="btn waves-effect waves-red delete-user"
+								type="submit"
+								name="action"
+								style={{
+									backgroundColor: "red!important"
+								}}
+								onClick={ (e) => deleteUser(e) }
+							>
+									Hesabınızı Silin
+							</button>
+							<br/>
+							Dikkat!! Bu işlem geri alınamaz, ve tüm verileriniz silinir!
 						</div>
 						
 					</div>
