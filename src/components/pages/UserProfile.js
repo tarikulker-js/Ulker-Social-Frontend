@@ -152,9 +152,11 @@ const Profile  = ()=>{
                    <h5 style={{
 								fontSize: "3vh"
 							}}>{userProfile.user.name}</h5>
-                   <h6 style={{
+                   
+				   	<a href={`mailto:${userProfile.user.email}`}><h6 style={{
 								fontSize: "2vh"
-							}}>{userProfile.user.email}</h6>
+							}}>{userProfile.user.email}</h6></a>
+				   
                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
                        <h6>{userProfile.posts.length !== null ? userProfile.posts.length :<h4>Yükleniyor...</h4>} posts</h6>
                        <h6>{userProfile.user.followers.length !== null ? userProfile.user.followers.length : <h4>Yükleniyor...</h4>} Takipçi</h6>

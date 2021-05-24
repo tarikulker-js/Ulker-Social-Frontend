@@ -9,9 +9,11 @@ import { API_URL } from '../../config';
 export default function Home(){
 	const [logined, setLogined] = useState(false)
 	const [data, setData] = useState([]);
-	const {state,dispatch} = useContext(UserContext)
+	const [createdAt, setCreatedAt] = useState("");
+	const {state,dispatch} = useContext(UserContext);
 	
 	const user = JSON.parse(localStorage.getItem("user"));
+
 	const userId = localStorage.getItem("userId");
 	
 	useEffect(() => {
@@ -28,6 +30,8 @@ export default function Home(){
 		.then(result => {
 			console.log("POSTS: ", result)
 			setData(result.posts);
+			
+			
 		})
 		.catch(err => {
 			console.log(err)
@@ -161,8 +165,6 @@ export default function Home(){
 					data.length !== null  ?
 						
 						data.map(item => {
-							console.log("postedBy profile", item)
-						
 							return(
 								<div className='card home-card'>
 
@@ -208,10 +210,6 @@ export default function Home(){
 									<div className='events'>
 										
 										{
-											//Up: https://res.cloudinary.com/doaf7ybhd/image/upload/v1619613479/7E3B1AAE-7096-4EDD-B753-625FCDD8B2F0_ongcsr.png
-											
-											//Down: https://res.cloudinary.com/doaf7ybhd/image/upload/v1619613106/9C0DF1E9-B878-49EC-ADAA-6B2267675DE1_lsme67.png
-											
 											item.likes.includes(userId)
 											 ? 
 											  
@@ -244,7 +242,7 @@ export default function Home(){
 									
 									<h6 style={{float: "left", margin: "5px"}}>{item.postedBy.name}: {item.title}</h6>
 									
-									<br/><br/>
+									<br/>
 									
 									<p style={{float: "left", margin: "10px"}} >{item.body}</p>
 									
@@ -281,8 +279,16 @@ export default function Home(){
 											/>
 										</form>
 									</div>
+									
+									<div className="createdAt">
+										<h6 style={{fontSize: "2vh", float: "left"}}>Oluşturma Tarihi: {item.createdAt ? item.createdAt.substring(0,10) : item.updatedAt.substring(0,10)} {item.createdAt ? Number(item.createdAt.substring(11,13)) + 3 : Number(item.updatedAt.substring(11,13)) + 3}:{item.createdAt ? item.createdAt.substring(14,16): item.updatedAt.substring(14,16)}</h6>
+									</div>
+									
+									<br/>
+									
 								</div>
 							</div>
+						
 							)
 						})
 					
