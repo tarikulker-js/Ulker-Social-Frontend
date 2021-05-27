@@ -28,13 +28,13 @@ export default function Home(){
 			}
 		}).then(res => res.json())
 		.then(result => {
-			console.log("POSTS: ", result)
+			//console.log("POSTS: ", result)
 			setData(result.posts);
 			
 			
 		})
 		.catch(err => {
-			console.log(err)
+			//console.log(err)
 		})
 		
 	}, [])
@@ -60,7 +60,7 @@ export default function Home(){
 				})
 				setData(newData)
 			 }).catch(err=>{
-				console.log(err)
+				//console.log(err)
 		  })
 	}
 	
@@ -76,7 +76,7 @@ export default function Home(){
 				  })
 			 }).then(res=>res.json())
 			 .then(result=>{
-				//   console.log(result)
+				//   //console.log(result)
 				const newData = data.map(item=>{
 					 if(item._id==result._id){
 						  return result
@@ -86,7 +86,7 @@ export default function Home(){
 				})
 				setData(newData)
 			 }).catch(err=>{
-				console.log(err)
+				//console.log(err)
 		  })
 	}
 	
@@ -106,7 +106,7 @@ export default function Home(){
 			})
 		}).then(res=>res.json())
 		.then(result=>{
-			console.log(result)
+			//console.log(result)
 			const newData = data.map(item=>{
 				if(item._id==result._id){
 					return result
@@ -121,7 +121,7 @@ export default function Home(){
 			
 			})
 			.catch(err=>{
-				console.log(err)
+				//console.log(err)
 			})
 		}
 		
@@ -137,7 +137,7 @@ export default function Home(){
 			}
 		}).then(res => res.json())
 		.then(result => {
-			console.log(result);
+			//console.log(result);
 			
 			if(result.message){
 				M.toast({html: result.message, classes: "green"});
@@ -170,7 +170,7 @@ export default function Home(){
 
 								<img 
 									src={item.postedBy.pic} 
-									className='profileImg'
+									className='profileImg pointer'
 									style={{width: '35px', height: '35px', borderRadius: '50%', float: 'left', margin: "15px"}}
 								/>
 								
@@ -214,7 +214,7 @@ export default function Home(){
 											 ? 
 											  
 												<img 
-												 className="material-icons"
+												 className="material-icons pointer"
 												 height="50px"
 												 width="50px"
 												 src="https://res.cloudinary.com/doaf7ybhd/image/upload/v1619613479/7E3B1AAE-7096-4EDD-B753-625FCDD8B2F0_ongcsr.png"
@@ -224,7 +224,7 @@ export default function Home(){
 											 :
 											
 											<img 
-											 	 className="material-icons"
+											 	 className="material-icons pointer"
 												 height="50px"
 												 width="50px"
 				src="https://res.cloudinary.com/doaf7ybhd/image/upload/v1619613106/9C0DF1E9-B878-49EC-ADAA-6B2267675DE1_lsme67.png"

@@ -40,7 +40,7 @@ const Routing = () => {
 			}
 		}).then((res) => res.json())
 		.then((data) => {
-			console.log("TOKEN Verify", data);
+			//console.log("TOKEN Verify", data);
 			
 			if(data.error === null && data.auth === true){
 				//window.location="/";
@@ -56,7 +56,7 @@ const Routing = () => {
 			}
 		})
 		.catch((err) => {
-			console.log("VERIFY TOKEN ERROR!!" + err)
+			//console.log("VERIFY TOKEN ERROR!!" + err)
 		})
 		
 	}, [])
@@ -117,15 +117,15 @@ export default function App() {
 			}
 		}).then((res) => res.json())
 		.then((data) => {
-			console.log("TOKEN Verify", data);
-			console.log(data.auth);
+			//console.log("TOKEN Verify", data);
+			//console.log(data.auth);
 			if(data.auth){
 				setLogined(true);
 			}
 			
 		})
 		.catch((err) => {
-			console.log("VERIFY TOKEN ERROR!!" + err)
+			//console.log("VERIFY TOKEN ERROR!!" + err)
 		})
 	}, [])
 	

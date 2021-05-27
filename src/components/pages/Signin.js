@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import axios from 'axios';
 import M from 'materialize-css';
+import { GoogleLogin } from 'react-google-login';
 import { API_URL } from '../../config';
 
 export default function Signin(){
@@ -55,6 +56,10 @@ export default function Signin(){
 		
 	}
 	
+	const responseGoogle = (response) => {
+		setEmail(response.profileObj.email);
+	}
+
 	return(
 		<div>
 			<center>
@@ -63,6 +68,34 @@ export default function Signin(){
 						<center>
 							
 							<h2 style={{fontSize: '30px'}}>Ulker Social</h2>
+							
+							<div className="card login-with" style={{width: "70%"}}>
+								<div className="card-content">
+									<GoogleLogin
+										clientId="492526209321-qbenq1m1sep0298rsq6kb1ek87b8nhbl.apps.googleusercontent.com"
+										buttonText="Google ile Giriş Yapın."
+										onSuccess={responseGoogle}
+										onFailure={responseGoogle}
+										cookiePolicy={'single_host_origin'}
+									/>
+									
+									<div
+									  id="appleid-signin"
+									  data-mode="center-align"
+									  data-type="sign-in"
+									  data-color="black"
+									  data-border="false"
+									  data-border-radius="15"
+									  data-width="200"
+									  data-height="32"
+									  data-logo-size="large"
+									  data-logo-position="11"
+									  data-label-position="42"
+									></div>
+									
+								</div>
+							</div>
+							
 							<input 
 								type='text'
 								placeholder='E-Mail'

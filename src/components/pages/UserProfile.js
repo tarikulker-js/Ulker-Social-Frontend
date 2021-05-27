@@ -16,8 +16,6 @@ const Profile  = ()=>{
  	 const [showFollow, setShowFollow] = useState(!localStorage.getItem("includesFollowing"));
 	 
     useEffect(()=>{
-		 
-		 console.log(showFollow)
 		
 		 fetch(`${API_URL}/user/${myUserId}`,{
            headers:{
@@ -33,7 +31,7 @@ const Profile  = ()=>{
 			 
 			 localStorage.setItem("includesFollowing", includes);
 			 
-			 console.log("INCLUDES", includes)
+			 //console.log("INCLUDES", includes)
 			 
        })
 		
@@ -44,12 +42,8 @@ const Profile  = ()=>{
 			 setShowFollow(true);
 		 }
 		 
-		 console.log("LOCALSTORAGE ID", user.token);
-		 console.log("PARAMS ID", userid)
-		 
-		 if(userid === user.user){
-			 window.location='/profile'
-		 }
+		 //console.log("LOCALSTORAGE ID", user.token);
+		 //console.log("PARAMS ID", userid)
 		 
        fetch(`${API_URL}/user/${userid}`,{
            headers:{
@@ -156,6 +150,29 @@ const Profile  = ()=>{
 				   	<a href={`mailto:${userProfile.user.email}`}><h6 style={{
 								fontSize: "2vh"
 							}}>{userProfile.user.email}</h6></a>
+				   
+				   <p style={{margin: "2vh"}}>{userProfile.user.bio ? userProfile.user.bio : 
+						 <div className='loading'>
+
+										<center>
+											<img 
+												src="https://res.cloudinary.com/doaf7ybhd/image/upload/v1619649099/6EE61733-6F43-40B6-B49E-63A9C737E251_a1b5fz.gif"
+
+												height="100px"
+												width="150px"
+											/>
+
+											<h5 style={{fontSize: "2vh"}}>Yükleniyor...</h5>
+
+
+										</center>
+
+									</div>
+						 }</p>
+					
+					<a href={`${userProfile.user.site}`}><h6>{userProfile.user.site}</h6></a>
+				   
+				   <br/>
 				   
                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
                        <h6>{userProfile.posts.length !== null ? userProfile.posts.length :<h4>Yükleniyor...</h4>} posts</h6>

@@ -142,3 +142,6 @@ nav .brand-logo{
 	background-color: red !important;
 }
 
+.pointer{
+	cursor: pointer;
+}
