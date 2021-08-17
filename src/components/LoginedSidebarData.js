@@ -54,7 +54,13 @@ export const LoginedSidebarData = [
      icon: <AiIcons.AiOutlineSearch />,
      cName: 'nav-text'
    },
-	{
+   {
+     title: 'Mobil Uygulamadan Devam Et',
+     path: 'ulkersocial://',
+     icon: <></>,
+     cName: 'nav-text'
+   },
+   {
      title: 'Çıkış',
      path: '/signout',
      icon: <BiIcons.BiLogOut />,
