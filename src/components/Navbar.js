@@ -16,8 +16,9 @@ function Route(){
 					<li class='navbar-li'><Link to="/search" class='navbar-li'><h6 class='navbar-h6'>Ara</h6></Link></li>
 					<li class='navbar-li'><Link to="/profile" class='navbar-li'><h6 class='navbar-h6'>Profil</h6></Link></li>
 					<li class='navbar-li'><Link to="/createpost" class='navbar-li'><h6 class='navbar-h6'>Gönderi Oluştur</h6></Link></li>
+					<li class='navbar-li'><Link to="ulkersocial://" class='navbar-li'><h6 class='navbar-h6'>Mobil Uygulama</h6></Link></li>
 					<li class='navbar-li red'><Link to="/signout" class='navbar-li'><h6 class='navbar-h6 signout-h6'>Çıkış</h6></Link></li>
-
+					
 				 </ul>
 			</div>
 		)
