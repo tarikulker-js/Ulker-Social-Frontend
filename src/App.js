@@ -23,6 +23,8 @@ import Reset from './components/pages/Reset';
 import NewPassword from './components/pages/NewPassword';
 import CreatePost from './components/pages/CreatePost';
 import Discover from './components/pages/Discover';
+import VerifyEmail from './components/pages/VerifyEmail';
+import VerifyedEmail from './components/pages/VerifyedEmail';
 
 import { reducer, initialState } from './reducers/userReducer';
 
@@ -99,6 +101,14 @@ const Routing = () => {
 				<Route path="/search">
 					<SearchUser />
 				</Route>
+				<Route exact path="/verify">
+					<VerifyEmail />
+				</Route>
+				<Route path="/verify/:email">
+					<VerifyedEmail />
+				</Route>
+				
+				
 			
 			</Switch>
 	)

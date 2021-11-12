@@ -4,6 +4,8 @@ import { UserContext } from '../../App.js';
 import axios from 'axios';
 import '../../App.css';
 import { Link } from 'react-router-dom';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import { API_URL } from '../../config';
 
 export default function Home(){
@@ -28,7 +30,7 @@ export default function Home(){
 			}
 		}).then(res => res.json())
 		.then(result => {
-			//console.log("POSTS: ", result)
+			console.log("POSTS: ", result)
 			setData(result.posts);
 			
 			
@@ -158,6 +160,7 @@ export default function Home(){
 		<div className='myFollowingPosts'>
 			
 			<center>
+
 				{
 					data
 						?
@@ -236,8 +239,25 @@ export default function Home(){
 									
 									<br/><br/><br/>
 									
-									<h6 style={{float: "left", margin: "5px"}} >{item.likes.length} Likes</h6>
-									
+									<Popup modal={true} trigger={<h6 style={{float: "left", margin: "5px"}} >{item.likes.length} Likes</h6>} position="right center">
+										<div>
+											<center>
+												<h2 style={{ fontSize: "40px"}}>Beğenenler Listesi</h2>
+											</center>
+											{
+												item.likes.map((likeUser) => {
+													console.log(likeUser);
+
+													return(
+														<div key={likeUser._id} style={{ display: "flex", textAlign: "center" }}>
+															<img src={likeUser.pic} width="50" height="50" style={{ marginLeft: "2.5%" }} />
+															<h4 style={{ fontSize: "15px"}}>{likeUser.name}</h4>
+														</div>
+													)
+												})
+											}
+										</div>
+									</Popup>
 									<br/><br/>
 									
 									<h6 style={{float: "left", margin: "5px"}}>{item.postedBy.name}: {item.title}</h6>
