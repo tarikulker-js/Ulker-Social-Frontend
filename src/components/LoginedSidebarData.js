@@ -55,8 +55,8 @@ export const LoginedSidebarData = [
      cName: 'nav-text'
    },
    {
-     title: 'Mobil Uygulamadan Devam Et',
-     path: 'ulkersocial://',
+     title: 'Sohbet',
+     path: '/chat',
      icon: <></>,
      cName: 'nav-text'
    },
