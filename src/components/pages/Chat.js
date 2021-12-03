@@ -6,8 +6,8 @@ import { API_URL } from '../../config';
 import '../../App.css'
 import SocketIO from "socket.io-client";
 
-const Server = "http://localhost:3001";
-const socket = SocketIO('http://localhost:3001', { transports: [ 'websocket', 'polling', 'flashsocket']});
+const Server = API_URL;
+const socket = SocketIO(API_URL, { transports: [ 'websocket', 'polling', 'flashsocket']});
 
 
 export default function DirectSend(){
