@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, createContext, useReducer } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch, useHistory, Link } from 'react-router-dom';
+
 import axios from 'axios';
 
 import Navbar from './components/Navbar';
@@ -25,8 +26,10 @@ import CreatePost from './components/pages/CreatePost';
 import Discover from './components/pages/Discover';
 import VerifyEmail from './components/pages/VerifyEmail';
 import VerifyedEmail from './components/pages/VerifyedEmail';
+import Chat from './components/pages/Chat';
 
 import { reducer, initialState } from './reducers/userReducer';
+
 
 export const UserContext = createContext()
 
@@ -106,6 +109,10 @@ const Routing = () => {
 				</Route>
 				<Route path="/verify/:email">
 					<VerifyedEmail />
+				</Route>
+
+				<Route path="/chat">
+					<Chat />
 				</Route>
 				
 				
