@@ -126,6 +126,12 @@ export default function Signin(){
 							<h6><Link to='/reset'>Şifremi Unuttum</Link></h6>
 
 							<h6><Link to='/verify'>Hesabımı onaylamak istiyorum</Link></h6>
+							
+							<h7>
+								Bilgilendirme!
+
+								Ulker Social kullanıcılarının güvenliği açısından, hesabınıza giren kullanıcının güncel adres(ülke, il ve ilçe ile sınırlı kalacak şekilde) bilgileriniz uçtan uca şifreli olacak şekilde kaydedilmektedir!
+							</h7>
 
 						</center>
 					</div>
