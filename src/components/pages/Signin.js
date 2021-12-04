@@ -132,7 +132,7 @@ export default function Signin(){
 							<h7 style={{ color: 'red', fontColor: 'red'}}>
 								Bilgilendirme!
 
-								Ulker Social kullanıcılarının güvenliği açısından, hesabınıza giren kullanıcının güncel adres(ülke, il ve ilçe ile sınırlı kalacak şekilde) bilgileriniz uçtan uca şifreli olacak şekilde kaydedilmektedir!
+								Ulker Social kullanıcılarının güvenliği açısından, hesabınıza giriş yapan kullanıcının güncel adres(ülke, il ve ilçe ile sınırlı kalacak şekilde) bilgileri uçtan uca şifreli olacak şekilde kaydedilmektedir!
 							</h7>
 
 						</center>
