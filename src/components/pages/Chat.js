@@ -6,8 +6,8 @@ import { API_URL } from '../../config';
 import '../../App.css'
 import SocketIO from "socket.io-client";
 
-const Server = API_URL;
-const socket = SocketIO(API_URL, { transports: [ 'websocket', 'polling', 'flashsocket']});
+const Server = "http://localhost:3001";
+const socket = SocketIO('http://localhost:3001', { transports: [ 'websocket', 'polling', 'flashsocket']});
 
 
 export default function DirectSend(){
@@ -15,6 +15,16 @@ export default function DirectSend(){
     const [messages, setMessages] = useState([]);
     
     useEffect(() => {
+        axios.get(API_URL + "/get-messages")
+        .then((lastMessages) => {
+            console.log(lastMessages);
+
+            lastMessages.data.map((lastMessage) => {
+                console.log(lastMessage);
+
+                setMessages(messages => [...messages, { message: lastMessage.data.message, author: lastMessage.author }] );
+            })
+        })
         socket.on('message', (data) => {
           console.log(data);
 
@@ -70,6 +80,7 @@ export default function DirectSend(){
 
                 <div className="card" style={{ width: window.innerWidth }}>
                     <div className="card-content">
+                        {messages.length == 0 ? <h2>Yükleniyor</h2> : <></>}
                         {renderChat()}
 
                         
