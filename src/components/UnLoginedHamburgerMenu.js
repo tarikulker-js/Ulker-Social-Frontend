@@ -32,10 +32,10 @@ function HamburgerMenu() {
 					 unloginedSidebarData.map((item, index) => {
               	 	return (
                   	<li key={index} className={item.cName}>
-								<Link to={item.path}>
+								<a href={item.path}>
 									{item.icon}
 									<span>{item.title}</span>
-								</Link>
+								</a>
                 		</li>
             	  );
             	})

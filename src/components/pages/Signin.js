@@ -126,8 +126,12 @@ export default function Signin(){
 							<h6><Link to='/reset'>Şifremi Unuttum</Link></h6>
 
 							<h6><Link to='/verify'>Hesabımı onaylamak istiyorum</Link></h6>
-								
-								<br/>
+							
+							<br/>
+							
+							<h6><Link to='/download'>Mobil Uygulama ile Tanışın! (Sadece Android)</Link></h6>
+							
+							<br/>
 							
 							<h7 style={{ color: 'red', fontColor: 'red'}}>
 								Bilgilendirme!
