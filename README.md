@@ -2,7 +2,7 @@
 
 - 🔭 I’m currently working on [Ulker Social](https://ulker-social.netlify.app)
 
-- 🤝 I’m looking for help with [Ulker Social](https://ulker-social.netlify.app)
+- 🤝 I’m looking for help with [My Mail (mailto:yahyatrkulker35@gmail.com)
 
 - 📫 How to reach me **yahyatrkulker35@gmail.com**
 
