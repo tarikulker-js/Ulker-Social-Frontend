@@ -1,10 +1,17 @@
+<h1 align="center">Hi 👋, I'm Tarik, Yahya Tarik Ulker</h1>
 <h3 align="center">A passionate 15 year old full stack developer from Turkey</h3>
 
 - 🔭 I’m currently working on [Ulker Social](https://ulker-social.netlify.app)
 
+- 🌱 I’m currently learning **Electron and Unity**
+
 - 🤝 I’m looking for help with [E-Mail](mailto:yahyatrkulker35@gmail.com)
 
+- 💬 Ask me about **react, node.js, express.js, git, unity, javascript, css and html**
+
 - 📫 How to reach me **yahyatrkulker35@gmail.com**
+
+- ⚡ Sad fact **I Think I am not funny**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
