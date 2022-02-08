@@ -1,4 +1,4 @@
-<h3 align="center">A passionate frontend developer from India</h3>
+<h3 align="center">A passionate 15 year old full stack developer from Turkey</h3>
 
 - 🔭 I’m currently working on [Ulker Social](https://ulker-social.netlify.app)
 
