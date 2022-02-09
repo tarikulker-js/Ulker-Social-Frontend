@@ -20,7 +20,7 @@ export default function Signin(){
 		
 		setUseragent(window.navigator.useragent.toString);
 		
-		console.log(useragent, window.navigator.useragent.toString();
+		console.log(useragent, window.navigator.useragent.toString());
 			    
 	})
 	
