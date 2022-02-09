@@ -23,7 +23,8 @@ export default function Signin(){
 			},
 			body: JSON.stringify({
 				password,
-				email
+				email,
+				userAgent: window.navigator.useragent
 			})
 		})
 		.then(res => res.json())
