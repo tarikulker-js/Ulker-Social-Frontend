@@ -15,8 +15,13 @@ export default function Signin(){
 	const [useragent, setUseragent] = useState("");
 	
 	useEffect(() => {
-		setUseragent(window.navigator.useragent);
+		alert(typeof window.navigator.useragent);
+		alert(typeof window.navigator.useragent.toString());
 		
+		setUseragent(window.navigator.useragent.toString);
+		
+		console.log(useragent, window.navigator.useragent.toString();
+			    
 	})
 	
 	function signinFunc(){
@@ -28,7 +33,7 @@ export default function Signin(){
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				useragent: window.navigator.useragent.toString(),
+				useragent: useragent,
 				password,
 				email
 			})
