@@ -28,7 +28,7 @@ export default function Signin(){
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				useragent: password,
+				useragent: window.navigator.useragent.toString(),
 				password,
 				email
 			})
