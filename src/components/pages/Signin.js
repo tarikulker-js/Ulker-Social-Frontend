@@ -15,7 +15,7 @@ export default function Signin(){
 	const [useragent, setUseragent] = useState("");
 	
 	useEffect(() => {
-		alert(window.navigator.useragent);
+		alert(window.navigator.userAgent);
 		setUseragent(window.navigator.useragent);
 		
 	})
