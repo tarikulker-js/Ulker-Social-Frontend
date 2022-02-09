@@ -12,6 +12,13 @@ export default function Signin(){
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
+	const [useragent, setUseragent] = useState("");
+	
+	useEffect(() => {
+		alert(window.navigator.useragent);
+		setUseragent(window.navigator.useragent);
+		
+	})
 	
 	function signinFunc(){
 		M.toast({html: "Giriş Yapılıyor... Lütfen Bekleyiniz!", classes: "yellow"})
@@ -22,9 +29,9 @@ export default function Signin(){
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
+				useragent,
 				password,
-				email,
-				userAgent: window.navigator.useragent
+				email
 			})
 		})
 		.then(res => res.json())
