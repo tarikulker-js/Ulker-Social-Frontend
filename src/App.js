@@ -11,7 +11,7 @@ import { API_URL } from './config';
 
 import Copyright from './components/Copyright';
 
-//Pages Import
+//Page Import
 import Home from './components/pages/Home';
 import Profile from './components/pages/Profile';
 import EditProfile from './components/pages/EditProfile.js';
@@ -32,7 +32,7 @@ import DownloadApp from './components/pages/DownloadApp';
 import { reducer, initialState } from './reducers/userReducer';
 
 
-export const UserContext = createContext()
+export const UserContext = createContext();
 
 const Routing = () => {
 	const history = useHistory();
