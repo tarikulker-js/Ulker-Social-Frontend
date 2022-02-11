@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import axios from 'axios';
@@ -12,17 +12,6 @@ export default function Signin(){
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
 	const [email, setEmail] = useState("");
-	const [useragent, setUseragent] = useState("");
-	
-	useEffect(() => {
-		alert(typeof window.navigator.userAgent);
-		alert(typeof window.navigator.userAgent.toString());
-		
-		setUseragent(window.navigator.userAgent.toString);
-		
-		console.log(useragent, window.navigator.userAgent.toString());
-			    
-	})
 	
 	function signinFunc(){
 		M.toast({html: "Giriş Yapılıyor... Lütfen Bekleyiniz!", classes: "yellow"})
@@ -33,7 +22,6 @@ export default function Signin(){
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				useragent: useragent,
 				password,
 				email
 			})
@@ -70,6 +58,7 @@ export default function Signin(){
 	
 	const responseGoogle = (response) => {
 		setEmail(response.profileObj.email);
+
 	}
 
 	return(
@@ -129,7 +118,7 @@ export default function Signin(){
 								name="action"
 								onClick={ (e) => signinFunc(e) }
 							>
-									Giriş Yap
+								Giriş Yap
 							</button>
 
 							<h5>Halen bir hesabınız yok mu? <Link to='/signup'>Kayıt olun!</Link></h5>
@@ -143,13 +132,16 @@ export default function Signin(){
 							
 							<h6><Link to='/download'>Mobil Uygulama ile Tanışın! (Sadece Android)</Link></h6>
 							
+							{/*
+							Kendini hacker sanan kardesim, bu comment satirini okuyup da lütfen beni hırsız ilan etme. burasi eski bir özellik içindir. bu özellik kaldırıldığı için de ve tekrar böyle bir özellik eklenilebileceği için de yorum satirisatiri haline getirilmiştir.
+							
 							<br/>
 							
 							<h7 style={{ color: 'red', fontColor: 'red'}}>
 								Bilgilendirme!
 
 								Ulker Social kullanıcılarının güvenliği açısından, hesabınıza giriş yapan kullanıcının güncel adres(ülke, il ve ilçe ile sınırlı kalacak şekilde) bilgileri uçtan uca şifreli olacak şekilde kaydedilmektedir!
-							</h7>
+							</h7>*/}
 
 						</center>
 					</div>
