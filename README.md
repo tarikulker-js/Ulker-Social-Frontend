@@ -5,7 +5,7 @@
 
 - 🔭 I’m currently working on [Ulker Social](https://ulker-social.netlify.app)
 
-- 🌱 I’m currently learning **Electron and Unity**
+- 🌱 I’m currently learning **Cyber Security**
 
 - 🤝 I’m looking for help with [E-Mail](mailto:yahyatrkulker35@gmail.com)
 
