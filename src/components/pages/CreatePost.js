@@ -24,7 +24,9 @@ export default function CreatePost(){
 					data.append("file", image)
 					data.append("upload_preset","tut_social")
 					data.append("cloud_name","doaf7ybhd")
-
+					
+					console.log("data", data);
+					
 					fetch("https://api.cloudinary.com/v1_1/doaf7ybhd/image/upload",{
 						 method:"POST",
 						 body: data
@@ -55,7 +57,7 @@ export default function CreatePost(){
 							}else{
 								M.toast({html: 'Postunuz başarıyla oluşturuldu. ', classes: "green"})
 
-								window.location='/profile';
+								//window.location='/profile';
 							}
 						})
 						.catch(err => {
