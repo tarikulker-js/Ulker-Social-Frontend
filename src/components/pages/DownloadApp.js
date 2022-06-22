@@ -4,7 +4,7 @@ import axios from 'axios';
 import M from 'materialize-css';
 import { API_URL } from '../../config';
 import '../../App.css'
-import ApkFile from '../../MobileApp/UlkerSocial-2.0.0.apk'
+import ApkFile from '../../MobileApp/UlkerSocial-2.1.0.apk'
 
 export default function DownloadApp(){
 	return(
