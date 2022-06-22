@@ -21,7 +21,7 @@ export default function DirectSend(){
 
             lastMessages.data.map((lastMessage) => {
                 console.log(lastMessage);
-
+                
                 setMessages(messages => [...messages, { message: lastMessage.data.message, author: lastMessage.author }] );
             })
         })
@@ -63,15 +63,15 @@ export default function DirectSend(){
 
     const renderChat = () => {
         console.log(messages)
-            return messages.map((mapedMessage) => (
-                <div>
-                    <div className='message' style={{ display: "flex", float: 'left' }} >
-                        <h6 style={{ display: 'flex'}}>{mapedMessage.author}: <span><p>{mapedMessage.message}</p></span></h6>
-                    </div>
-                    <br /><br />
+        return messages.map((mapedMessage) => (
+            <div>
+                <div className='message' style={{ display: "flex", float: 'left' }} >
+                    <h6 style={{ display: 'flex'}}>{mapedMessage.author.name}: <span><p>{mapedMessage.message}</p></span></h6>
                 </div>
-            ))
-        }
+                <br /><br />
+            </div>
+        ))
+    }
 	
 	return(
 		<div>

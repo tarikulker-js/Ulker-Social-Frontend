@@ -134,7 +134,7 @@ const Routing = () => {
 				!clientOS ? <></> : clientOS=="Linux OS" ? <Route path='/download'>
 					<DownloadApp />
 
-				</Route> : <>{alert(clientOS)}</>
+				</Route> : <></>
 			}
 
 

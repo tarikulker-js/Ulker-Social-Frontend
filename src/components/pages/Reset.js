@@ -32,7 +32,7 @@ export default function Reset(){
 				M.toast({html: data.message, classes: "green"})
 				
 				setTimeout(function(){
-					window.location='/signin';
+					//window.location='/signin';
 				}, 2000)
 				
 			}
