@@ -14,7 +14,7 @@ export default function DownloadApp(){
 
                 <div className="card" style={{ width: window.innerWidth }}>
                     <div className="card-content">
-                        <a href={ApkFile} download><button>Mobil Uygulamayı İndirmek için tıklayınız (apk file)</button></a>
+                        <a href="https://expo.dev/artifacts/070bbc02-3123-4ceb-85a2-33c603e84d1b"><button>Mobil Uygulamayı İndirmek için tıklayınız (apk file)</button></a>
 
 
                     </div>
