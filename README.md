@@ -3,9 +3,9 @@
 <h1 align="center">Hi 👋, I'm Tarik, Yahya Tarik Ulker</h1>
 <h3 align="center">A passionate 16 years old full stack developer from Turkey</h3>
 
-- 🔭 I’m currently working on [Ulker Social](https://ulker-social.netlify.app)
+- 🔭 I’m currently working on [BlindLook](https://blindlook.com/)
 
-- 🌱 I’m currently learning **Cyber Security**
+- 🌱 I’m currently working **Freelancer Developer**
 
 - 🤝 I’m looking for help with [E-Mail](mailto:yahyatrkulker35@gmail.com)
 
