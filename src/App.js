@@ -30,6 +30,9 @@ import Chat from './components/pages/Chat';
 import DownloadApp from './components/pages/DownloadApp';
 
 import { reducer, initialState } from './reducers/userReducer';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfUse from './TermsOfUse';
+import CookiePolicy from './CookiePolicy';
 
 
 export const UserContext = createContext();
@@ -128,6 +131,16 @@ const Routing = () => {
 
 			<Route path="/chat">
 				<Chat />
+			</Route>
+			
+			<Route path="/privacy-policy">
+				<PrivacyPolicy />
+			</Route>
+			<Route path="/terms-of-use">
+				<TermsOfUse />
+			</Route>
+			<Route path="/cookie-policy">
+				<CookiePolicy />
 			</Route>
 
 			{
